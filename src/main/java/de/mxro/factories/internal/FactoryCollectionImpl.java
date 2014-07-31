@@ -11,6 +11,8 @@ import de.mxro.factories.FactoryCollection;
 @SuppressWarnings("rawtypes")
 public class FactoryCollectionImpl implements FactoryCollection {
 
+	private final boolean ENABLE_LOG = true;
+
 	private final List<Factory> factories;
 
 	@Override
@@ -33,6 +35,10 @@ public class FactoryCollectionImpl implements FactoryCollection {
 		for (Factory factory : factories) {
 
 			if (factory.canInstantiate(conf)) {
+				if (ENABLE_LOG) {
+					System.out.println(this + ": Factory " + factory
+							+ " instantiates " + conf);
+				}
 				return factory.create(conf, dependencies);
 			}
 
