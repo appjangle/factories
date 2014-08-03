@@ -11,7 +11,7 @@ import de.mxro.factories.FactoryCollection;
 @SuppressWarnings("rawtypes")
 public class FactoryCollectionImpl implements FactoryCollection {
 
-	private final boolean ENABLE_LOG = true;
+	private final boolean ENABLE_LOG = false;
 
 	private final List<Factory> factories;
 
