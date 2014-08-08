@@ -383,9 +383,9 @@
 	</developers>
 
 	<scm>
-		<connection>scm:git:git@github.com:mxro/async-api.git</connection>
-		<url>https://github.com/mxro/fn-api</url>
-		<developerConnection>scm:git:git@github.com:mxro/async-api.git
+		<connection>scm:git:git@github.com:appjangle/factories.git</connection>
+		<url>https://github.com/appjangle/factories</url>
+		<developerConnection>scm:git:git@github.com:appjangle/factories.git
 		</developerConnection>
 	</scm>
 	
