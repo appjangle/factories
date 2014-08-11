@@ -9,6 +9,11 @@ import de.mxro.factories.internal.FactoryCollectionImpl;
  */
 public class Factories {
 
+	/**
+	 * Creates a new collection of factories.
+	 * 
+	 * @return A new factory collection.
+	 */
 	public static FactoryCollection create() {
 		return new FactoryCollectionImpl();
 	}
