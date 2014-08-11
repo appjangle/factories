@@ -1,7 +1,8 @@
 package de.mxro.factories;
 
 /**
- * <p>A collection of factories. It supports the full {@link Factory} interface but
+ * <p>
+ * A collection of factories. It supports the full {@link Factory} interface but
  * instead of trying to instantiate objects from one factory, it automatically
  * forwards calls to all registered factories.
  * 
@@ -12,6 +13,13 @@ package de.mxro.factories;
 public interface FactoryCollection extends
 		Factory<Object, Configuration, Dependencies> {
 
-	public void register(Factory<?, ?, ?> f);
+/**
+	 * <p>Registers a new factory for this collection.
+	 * <p>If a {@link Configuration} compatible with this factory is passed to subsequent calls of {@link FactoryCollection#create(Configuration, Dependencies), 
+	 *  this factory will be used to instantate the object.
+	 * 
+	 * @param factory The factory to be added to the collection.
+	 */
+	public void register(Factory<?, ?, ?> factory);
 
 }
