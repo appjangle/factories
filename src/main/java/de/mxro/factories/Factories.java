@@ -3,7 +3,7 @@ package de.mxro.factories;
 import de.mxro.factories.internal.FactoryCollectionImpl;
 
 /**
- * En
+ * Entry point for factories module. Allows to create new {@link FactoryCollection}s.
  * @author Max
  *
  */
