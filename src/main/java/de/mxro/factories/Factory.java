@@ -1,7 +1,7 @@
 package de.mxro.factories;
 
 /**
- * The interface to be provided by all factories.
+ * A factory which can instantate objects from a {@link Configuration} and run-time {@link Dependencies}.
  * 
  * @author Max
  * 
