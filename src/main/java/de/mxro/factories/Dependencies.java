@@ -3,7 +3,7 @@ package de.mxro.factories;
 /**
  * Run-time dependencies of objects to be instantiated.
  * 
- * @author MAx
+ * @author Max
  * 
  */
 public interface Dependencies {
