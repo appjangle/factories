@@ -8,6 +8,13 @@ import de.mxro.factories.Dependencies;
 import de.mxro.factories.Factory;
 import de.mxro.factories.FactoryCollection;
 
+/**
+ * <a>A simple implementation of the {@link FactoryCollection} interface. Note
+ * that this implementation is not thread-safe.
+ * 
+ * @author Max
+ *
+ */
 @SuppressWarnings("rawtypes")
 public class FactoryCollectionImpl implements FactoryCollection {
 
