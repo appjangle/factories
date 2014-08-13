@@ -6,7 +6,8 @@
 	<artifactId>factories</artifactId>
 	<version>0.0.2</version>
 	<description>Allows definition and management of factories.</description>
-	
+	<url>https://github.com/appjangle/factories</url>
+		
 	<properties>
 
 		<module.gwtVersion>2.2.0</module.gwtVersion>
