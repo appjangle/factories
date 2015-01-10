@@ -7,20 +7,19 @@ package de.mxro.factories;
  * forwards calls to all registered factories.
  * 
  * 
- * @author Max
+ * @author Max Rohde
  *
  */
-public interface FactoryCollection extends
-		Factory<Object, Configuration, Dependencies> {
+public interface FactoryCollection extends Factory<Object, Configuration, Dependencies> {
 
-/**
-	 * <p>Registers a new factory for this collection.
-	 * <p>If a {@link Configuration} compatible with this factory is passed to subsequent calls of {@link FactoryCollection#create(Configuration, Dependencies), 
-	 *  this factory will be used to instantiate the object.
-	 *  <p>The collection will always use the <b>first</b> factory registered to instantate objects. 
-	 * 
-	 * @param factory The factory to be added to the collection.
-	 */
-	public void register(Factory<?, ?, ?> factory);
+    /**
+     * <p>Registers a new factory for this collection.
+     * <p>If a {@link Configuration} compatible with this factory is passed to subsequent calls of {@link FactoryCollection#create(Configuration, Dependencies), 
+     *  this factory will be used to instantiate the object.
+     *  <p>The collection will always use the <b>first</b> factory registered to instantate objects. 
+     * 
+     * @param factory The factory to be added to the collection.
+     */
+    public void register(Factory<?, ?, ?> factory);
 
 }
