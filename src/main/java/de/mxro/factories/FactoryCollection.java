@@ -12,7 +12,7 @@ package de.mxro.factories;
  */
 public interface FactoryCollection extends Factory<Object, Configuration, Dependencies> {
 
-    /**
+/**
      * <p>Registers a new factory for this collection.
      * <p>If a {@link Configuration} compatible with this factory is passed to subsequent calls of {@link FactoryCollection#create(Configuration, Dependencies), 
      *  this factory will be used to instantiate the object.
