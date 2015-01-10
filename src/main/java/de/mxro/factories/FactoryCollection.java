@@ -12,7 +12,7 @@ package de.mxro.factories;
  */
 public interface FactoryCollection extends Factory<Object, Configuration, Dependencies> {
 
-/**
+    /**
      * <p>Registers a new factory for this collection.
      * <p>If a {@link Configuration} compatible with this factory is passed to subsequent calls of {@link FactoryCollection#create(Configuration, Dependencies), 
      *  this factory will be used to instantiate the object.
@@ -21,5 +21,16 @@ public interface FactoryCollection extends Factory<Object, Configuration, Depend
      * @param factory The factory to be added to the collection.
      */
     public void register(Factory<?, ?, ?> factory);
+
+    /**
+     * <p>
+     * Attempts to find a factory in this collection, which is capable of
+     * instantiating the provided configuration.
+     * <p>
+     * If such a factory is found, it is replaced with the provided factory.
+     * 
+     * @param factory
+     */
+    public void replace(Configuration configuration, Factory<?, ?, ?> factory);
 
 }
