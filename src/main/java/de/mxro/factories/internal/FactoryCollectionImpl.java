@@ -18,52 +18,69 @@ import de.mxro.factories.FactoryCollection;
 @SuppressWarnings("rawtypes")
 public class FactoryCollectionImpl implements FactoryCollection {
 
-	private final boolean ENABLE_LOG = false;
+    private final boolean ENABLE_LOG = false;
 
-	private final List<Factory> factories;
+    private final List<Factory> factories;
 
-	@Override
-	public boolean canInstantiate(Configuration conf) {
+    @Override
+    public boolean canInstantiate(final Configuration conf) {
 
-		for (Factory factory : factories) {
+        for (final Factory factory : factories) {
 
-			if (factory.canInstantiate(conf)) {
-				return true;
-			}
+            if (factory.canInstantiate(conf)) {
+                return true;
+            }
 
-		}
+        }
 
-		return false;
-	}
+        return false;
+    }
 
-	@SuppressWarnings("unchecked")
-	@Override
-	public Object create(Configuration conf, Dependencies dependencies) {
-		for (Factory factory : factories) {
+    @SuppressWarnings("unchecked")
+    @Override
+    public Object create(final Configuration conf, final Dependencies dependencies) {
+        for (final Factory factory : factories) {
 
-			if (factory.canInstantiate(conf)) {
-				if (ENABLE_LOG) {
-					System.out.println(this + ": Factory " + factory
-							+ " instantiates " + conf);
-				}
-				return factory.create(conf, dependencies);
-			}
+            if (factory.canInstantiate(conf)) {
+                if (ENABLE_LOG) {
+                    System.out.println(this + ": Factory " + factory + " instantiates " + conf);
+                }
+                return factory.create(conf, dependencies);
+            }
 
-		}
+        }
 
-		throw new RuntimeException(
-				"Cannot instantiate objects for configuration: "
-						+ conf.getClass() + " " + conf);
-	}
+        throw new RuntimeException("Cannot instantiate objects for configuration: " + conf.getClass() + " " + conf);
+    }
 
-	@Override
-	public void register(Factory f) {
-		factories.add(f);
-	}
+    @Override
+    public void register(final Factory f) {
+        factories.add(f);
+    }
 
-	public FactoryCollectionImpl() {
-		super();
-		this.factories = new ArrayList<Factory>();
-	}
+    @Override
+    public void replace(final Configuration configuration, final Factory<?, ?, ?> replacement) {
+        int idx = -1;
+        boolean found = false;
+        for (final Factory factory : factories) {
+            idx++;
+            if (factory.canInstantiate(configuration)) {
+                found = true;
+                break;
+            }
+        }
+
+        if (!found) {
+            throw new IllegalArgumentException("Cannot find factory to instantiate " + configuration);
+        }
+
+        factories.set(idx, replacement);
+
+    }
+
+    public FactoryCollectionImpl() {
+        super();
+        this.factories = new ArrayList<Factory>();
+    }
 
 }
