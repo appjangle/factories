@@ -1,7 +1,5 @@
 package de.mxro.factories.tests;
 
-import junit.framework.Assert;
-
 import org.junit.Test;
 
 import de.mxro.factories.Configuration;
@@ -9,6 +7,7 @@ import de.mxro.factories.Dependencies;
 import de.mxro.factories.Factories;
 import de.mxro.factories.Factory;
 import de.mxro.factories.FactoryCollection;
+import junit.framework.Assert;
 
 public class TestFactoryCreationAndLookup {
 

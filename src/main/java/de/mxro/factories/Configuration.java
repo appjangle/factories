@@ -1,5 +1,7 @@
 package de.mxro.factories;
 
+import java.util.Map;
+
 /**
  * <p>
  * Configuration to be used for instantiating an object.
