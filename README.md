@@ -1,3 +1,5 @@
+** Important **: This project has moved to [javadelight/delight-factories](https://github.com/javadelight/delight-factories)
+
 factories
 =========
 
